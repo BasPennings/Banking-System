@@ -59,10 +59,9 @@ namespace Banking_System
 
         public void PrintBankAccountMenu(BankAccount bankAccount)
         {
-            string username = $"{bankAccount.AccountHolderInformation.FirstName} {bankAccount.AccountHolderInformation.Infix} {bankAccount.AccountHolderInformation.LastName}.";
             Console.WriteLine($"""
                 [Bank Account Menu]
-                Welcome to your {bankAccount._bank.Name} account, {username}.
+                Welcome to your {bankAccount._bank.Name} account, {bankAccount.AccountHolderInformation.Username}.
 
 
 

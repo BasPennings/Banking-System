@@ -13,6 +13,7 @@ namespace Banking_System.Account
         public required string FirstName { get; set; }
         public required string Infix { get; set; }
         public required string LastName { get; set; }
+        public required string Username { get; set; }
         public required Address Address { get; set; }
         public required string PhoneNumber { get; set; }
         public required string EmailAddress { get; set; }
@@ -105,23 +106,10 @@ namespace Banking_System.Account
             };
         }
 
-        //public bool ValidateUsername(string username)
-        //    => $"{AccountHolderInformation.FirstName} {AccountHolderInformation.Infix} {AccountHolderInformation.LastName}" == username;
-
-        //public bool ValidatePersonalIdentificationNumber(string personalIdentificationNumber)
-        //    => _securityInformation.PersonalIdentificationNumber == personalIdentificationNumber;
-
         public bool ValidateUsername(string username)
-        {
-            string correctUsername = $"{AccountHolderInformation.FirstName} {AccountHolderInformation.Infix !?? " "}{AccountHolderInformation.LastName}";
-            Console.WriteLine($"Given username: {username} | Correct username {correctUsername}");
-            return correctUsername == username;
-        }
+            => AccountHolderInformation.Username == username;
 
         public bool ValidatePersonalIdentificationNumber(string personalIdentificationNumber)
-        {
-            Console.WriteLine($"Given PIN: {personalIdentificationNumber} | Correct PIN {_securityInformation.PersonalIdentificationNumber}");
-            return _securityInformation.PersonalIdentificationNumber == personalIdentificationNumber;
-        }
+            => _securityInformation.PersonalIdentificationNumber == personalIdentificationNumber;
     }
 }

@@ -21,6 +21,7 @@ namespace Banking_System.Banks
                         FirstName = "Bas",
                         Infix = "",
                         LastName = "Peters",
+                        Username = "Bas Peters",
 
                         Address = new Address {
                             Street = "Boterhoek",
